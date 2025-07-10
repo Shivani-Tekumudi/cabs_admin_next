@@ -1,0 +1,27 @@
+[
+    {
+        "id" :1,
+        "email" :"admin1@gmail.com",
+        "pswd" : "123456"
+    },
+      {
+        "id" :2,
+        "email" :"admin2@gmail.com",
+        "pswd" : "123456"
+    },
+      {
+        "id" :3,
+        "email" :"admin3@gmail.com",
+        "pswd" : "123456"
+    },
+      {
+        "id" :4,
+        "email" :"admin4@gmail.com",
+        "pswd" : "123456"
+    },
+      {
+        "id" :5,
+        "email" :"admin5@gmail.com",
+        "pswd" : "123456"
+    }
+]
