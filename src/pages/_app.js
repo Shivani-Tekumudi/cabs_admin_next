@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { Lato } from 'next/font/google';
-import { AdminContextProvider } from "../context/adminContext";
+import { AdminContextProvider } from "@/context/adminContext";
 const lato = Lato({
   subsets: ['latin'],
   weight: ['400', '700'], // choose what you need
