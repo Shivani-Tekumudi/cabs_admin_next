@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { rentalList } from 'data/rentalList';
+import { rentalList } from '@/data/rentalList';
 
 const AdminContext = createContext(null);
 

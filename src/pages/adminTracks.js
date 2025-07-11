@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useAdminContext } from 'context/adminContext';
+import { useAdminContext } from '@/context/adminContext';
 import Layout from '@/components/Layout';
 import { protectRoute } from "@/auth/protectedRoute";
 

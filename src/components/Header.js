@@ -1,6 +1,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems, MenuSeparator } from '@headlessui/react'
 import { useRouter } from 'next/router';
-import { useAdminContext } from 'context/adminContext';
+import { useAdminContext } from '@/context/adminContext';
 
 export default function Header({ adminName }) {
    
