@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { rentalList } from '@/data/rentalList';
+import { rentalList } from 'data/rentalList';
 
 const AdminContext = createContext(null);
 
-export function AdminContextProvider({ children }) {
+export  function AdminContextProvider({ children }) {
   const [admin, setAdmin] = useState(null);
   const [toast, setToast] = useState(null);
   const [listings, setListings] = useState([]);

@@ -2,10 +2,9 @@ import { protectRoute } from "@/auth/protectedRoute";
 
 import Layout from '@/components/Layout';
 
-import { rentalList } from "@/data/rentalList";
-import Table from "@/components/Table";
+import Table from "components/Table";
 import { useEffect,useState } from "react";
-import { useAdminContext } from "./context/adminContext";
+import { useAdminContext } from "context/adminContext";
 
 export const getServerSideProps = protectRoute;
 

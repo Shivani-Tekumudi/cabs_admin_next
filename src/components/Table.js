@@ -1,7 +1,7 @@
 'use client';
 import Modal from '@/components/Modal';
 import { useState } from 'react';
-import { useAdminContext } from '@/pages/context/adminContext';
+import { useAdminContext } from 'context/adminContext';
 
 export default function Table({ statusFilter, adminName }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
