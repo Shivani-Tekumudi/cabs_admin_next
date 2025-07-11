@@ -2,26 +2,31 @@
     {
         "id" : 1,
         "email" :"admin1@gmail.com",
+        "name":"Admin 1",
         "pswd" : "123456"
     },
       {
         "id" : 2,
         "email" :"admin2@gmail.com",
+        "name":"Admin 2",
         "pswd" : "123456"
     },
       {
         "id" : 3,
         "email" :"admin3@gmail.com",
+         "name":"Admin 3",
         "pswd" : "123456"
     },
       {
         "id" :4,
         "email" :"admin4@gmail.com",
+         "name":"Admin 4",
         "pswd" : "123456"
     },
       {
         "id" :5,
         "email" :"admin5@gmail.com",
+         "name":"Admin 5",
         "pswd" : "123456"
     }
 ]

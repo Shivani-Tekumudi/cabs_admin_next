@@ -1,4 +1,25 @@
-export default function Header() {
+import { Menu, MenuButton, MenuItem, MenuItems, MenuSeparator } from '@headlessui/react'
+import { useRouter } from 'next/router';
+import { useAdminContext } from '@/pages/context/adminContext';
+
+export default function Header({ adminName }) {
+   
+ const router = useRouter();
+const { showToast } = useAdminContext();
+  const handleLogout = async () => {
+    const res = await fetch('/api/logout', {
+      method: 'POST',
+    });
+  if (res.ok) {
+      showToast('Logout successful');
+      setTimeout(() => router.push('/'), 1000);
+    } else {
+      showToast('Failed to logout', 'error');
+    }
+    router.push('/'); 
+  };
+
+
     return (
         <>
 
@@ -15,28 +36,30 @@ export default function Header() {
                     </button></div>
                     <div className=" md:block md:w-auto" id="navbar-dropdown">
 
-
-
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class=" px-5 py-2.5 text-center inline-flex items-center " type="button"><div class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-blue-200 rounded-full ">
-    <span class="font-medium text-gray-600 ">A</span>
-</div> <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <div className=" top-24 w-52 text-right mr-5">
+    <Menu>
+      <MenuButton className='focus:border border-none'>
+        <div className='flex justify-center items-center'>
+        <div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-blue-200 rounded-full ">
+    <div className="font-medium text-gray-600 ">A </div>
+</div> <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                        </button>
-
-
-                        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                                <li>
-                                    <span  class="block px-4 py-2  text-gray-700">One Admin</span>
-                                </li>
-                               
-                                
-                            </ul>
-                            <div class="py-2">
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Sign Out</a>
+                        </svg></div></MenuButton>
+      <MenuItems anchor="bottom" className="bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 focus:border border-none">
+        <MenuItem className="py-2 text-md text-gray-700 ">
+          <span className="block data-focus:bg-blue-100 px-5" >
+           { adminName }
+          </span>
+        </MenuItem>
+       <MenuItem className="py-2 text-md text-gray-700 ">
+          <button className="block w-full text-left hover:cursor-pointer data-focus:bg-blue-100 px-5"  onClick={handleLogout}>
+            Log out
+          </button>
+        </MenuItem>
+        
+      </MenuItems>
+    </Menu>
     </div>
-                        </div>
                     </div>
                 </div>
             </nav>

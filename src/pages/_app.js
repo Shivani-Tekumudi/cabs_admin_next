@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Lato } from 'next/font/google';
+import { AdminContextProvider } from "./context/adminContext";
 const lato = Lato({
   subsets: ['latin'],
   weight: ['400', '700'], // choose what you need
@@ -8,8 +9,9 @@ const lato = Lato({
 
 export default function App({ Component, pageProps }) {
   return  (
+    <AdminContextProvider>
   <main className={lato.className}>
   <Component {...pageProps} />
-  </main>
+  </main></AdminContextProvider>
   )
 }

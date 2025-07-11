@@ -15,7 +15,11 @@ if (req.method === 'POST') {
 
 if(admin){
     const ONE_DAY = 60 * 60 * 24;
-    res.setHeader('Set-cookie', `loggedIn=true;Max-Age=${ONE_DAY}; Path=/ ; HttpOnly;Secure; SameSite=Lax`);
+   res.setHeader('Set-Cookie', [
+    `loggedIn=true; Max-Age=${ONE_DAY}; Path=/; HttpOnly; Secure; SameSite=Lax`,
+    `adminName=${admin.name}; Max-Age=${ONE_DAY}; Path=/; HttpOnly; Secure; SameSite=Lax`
+  ]);
+
     return res.status(200).json({ message: 'Login successful' })
 }
 
